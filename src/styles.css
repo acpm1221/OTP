@@ -1,0 +1,82 @@
+.App {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 2rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.input-box {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.input-box input {
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.input-box input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  transform: translateY(-2px);
+}
+
+.input-box input:not(:placeholder-shown) {
+  border-color: #27ae60;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .input-box {
+    gap: 0.5rem;
+  }
+
+  .input-box input {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation for completed OTP */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.input-box input.completed {
+  animation: bounce 0.5s ease;
+}
